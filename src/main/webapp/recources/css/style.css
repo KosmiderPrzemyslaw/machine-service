@@ -1,0 +1,34 @@
+#form{
+    position:fixed;
+    top:50%;
+    left:50%;
+    width:250px;
+}
+
+body {
+    background-image: url('/recources/img/rozne-narzedzia-warsztatowe.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.form-group{
+    color: azure;
+    caret-color: aqua;
+}
+.form-check{
+    color: azure;
+}
+
+h2{
+    color: azure;
+}
+
+p{
+    margin-top: 300px;
+}
+
+.form-text{
+    color: cyan;
+}
+.text-muted{
+    color: cyan;
+}
