@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: przemysaw
-  Date: 21.06.20
-  Time: 17:28
+  Date: 01.07.20
+  Time: 20:22
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -15,13 +15,13 @@
 <body>
 <jsp:include page="dashboard.jsp"/>
 <script type="text/javascript">
-    function dostepZabroniony() {
-        alert("Dostęp zabroniony!")
+    function stronaNieIstnieje() {
+        alert("ERROR 404 - podana strona nie istnieje!")
     }
 </script>
-<h1 class="dostep-zabroniony">DOSTĘP ZABRONIONY</h1>
+<h1 class="error404">ERROR 404 PODANA STRONA NIE ISTNIEJE!!</h1>
 <jsp:include page="footer.jsp"/>
 
 </body>
-<script type="text/javascript">window.onload = dostepZabroniony</script>
+<script type="text/javascript">window.onload = stronaNieIstnieje</script>
 </html>

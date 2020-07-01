@@ -1,8 +1,8 @@
-#form{
-    position:fixed;
-    top:50%;
-    left:50%;
-    width:250px;
+#form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 250px;
 }
 
 body {
@@ -10,25 +10,74 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
-.form-group{
+
+.form-group {
     color: azure;
     caret-color: aqua;
 }
-.form-check{
+
+.form-check {
     color: azure;
 }
 
-h2{
-    color: azure;
+h2.form-signin-heading {
+    color: white;
 }
 
-p{
+h2.form-heading {
+    color: white;
+}
+
+p {
     margin-top: 300px;
 }
 
-.form-text{
-    color: cyan;
+small.form-text {
+    color: aliceblue;
 }
-.text-muted{
-    color: cyan;
+
+small.text-muted {
+    color: aliceblue;
+}
+
+li.list-group-item {
+    padding-bottom: -10px;
+    alignment: center;
+    height: 40px;
+    width: 800px;
+}
+
+ul.list-group {
+    align-content: center;
+    align-items: center;
+}
+
+button.list-group-item, button.list-group-item-action {
+    align-items: center;
+}
+
+button.badge-danger, button.btn-warning {
+    height: 5px;
+    width: 35px;
+    left: 450px;
+}
+
+#button1, #button2 {
+    position: relative;
+    top: -11px;
+}
+
+#button2 {
+    margin-right: 20px;
+}
+
+h1.dostep-zabroniony {
+    color: white;
+    text-align: center;
+}
+
+h1.error404 {
+    text-align: center;
+    color: red;
+
 }

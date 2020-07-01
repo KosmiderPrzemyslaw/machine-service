@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: przemysaw
-  Date: 27.06.20
-  Time: 18:37
+  Date: 01.07.20
+  Time: 01:37
   To change this template use File | Settings | File Templates.
 --%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
@@ -14,17 +14,16 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
-    <title>Title</title>
+    <title>Update service</title>
     <jsp:include page="header.jsp"/>
-
-
 </head>
+
 <body>
 <jsp:include page="navbar.jsp"/>
 <div class="container">
     <center>
-        <form:form modelAttribute="serviceRequest" method="post">
-            <h2 class="form-signin-heading">Zgłoszenie serwisowe</h2>
+        <form:form modelAttribute="machine" method="post">
+            <h2 class="form-signin-heading">Korekta zgłoszenia serwisowego</h2>
             <spring:bind path="machineName">
                 <div class="form-group" ${status.error ? 'has-error' : ''}>
                     <label for="machineName">Nazwa maszyny:

@@ -1,6 +1,5 @@
 package bootmaven.service;
 
-import bootmaven.classes.CurrentUser;
 import bootmaven.model.Role;
 import bootmaven.model.User;
 import bootmaven.repositories.UserRepository;
@@ -23,22 +22,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
     private UserRepository userRepository;
 
-    //    @Autowired
-//    public void setUserRepository(UserService userService) {
-//        this.userService = userService;
-//    }
-//
-//    @Override
-//    @Transactional(readOnly = true)
-//    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-//        User user = userService.findByUserName(username);
-//        if (user == null) {throw new UsernameNotFoundException(username); }
-//        Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
-//        user.getRoles().forEach(r ->
-//                grantedAuthorities.add(new SimpleGrantedAuthority(r.getName())));
-//        return new CurrentUser(user.getUsername(),user.getPassword(),
-//                grantedAuthorities, user);
-//    }
     @Override
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String username) {

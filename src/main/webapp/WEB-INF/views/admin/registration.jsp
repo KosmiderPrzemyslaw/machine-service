@@ -26,10 +26,10 @@
 <div class="container">
     <center>
         <form:form modelAttribute="userForm" method="post">
-            <h2 class="form-signin-heading">Create your account</h2>
+            <h2 class="form-signin-heading">Rejestracja</h2>
             <spring:bind path="username">
                 <div class="form-group ${status.error ? 'has-error' : ''}">
-                    <label for="username">Username:
+                    <label for="username">Nazwa użytkownika:
                         <form:input path="username" class="form-control" id="username"/>
                         <form:errors path="username" cssClass="error"/>
                     </label>
@@ -37,7 +37,7 @@
             </spring:bind>
             <spring:bind path="password">
                 <div class="form-group${status.error ? 'has-error' : ''}">
-                    <label for="password">Password:
+                    <label for="password">Hasło:
                         <form:input type="password" path="password" name="password" class="form-control" id="password"/>
                         <form:errors path="password" cssClass="error"/>
                     </label>
@@ -45,7 +45,7 @@
             </spring:bind>
             <spring:bind path="passwordConfirm">
                 <div class="form-group${status.error ? 'has-error' : ''}">
-                    <label for="passwordConfirm">Confirm password:
+                    <label for="passwordConfirm">Potwierdź hasło:
                         <form:input type="password" path="passwordConfirm" name="passwordConfirm" class="form-control"
                                     id="passwordConfirm"/>
                         <form:errors path="passwordConfirm" cssClass="error"/>
@@ -53,31 +53,31 @@
                 </div>
             </spring:bind>
             <div class="form-group">
-                <label for="email">Email address:
+                <label for="email">Email:
                     <form:input path="email" name="email" class="form-control" id="email"/>
                     <form:errors path="email" cssClass="error"/>
                 </label>
             </div>
             <div class="form-group">
-                <label for="companyName">Company name:
+                <label for="companyName">Nazwa firmy:
                     <form:input path="companyName" name="companyName" class="form-control" id="companyName"/>
                     <form:errors path="companyName" cssClass="error"/>
                 </label>
             </div>
             <div class="form-group">
-                <label for="city">City:
+                <label for="city">Miasto:
                     <form:input path="city" name="city" class="form-control" id="city"/>
                     <form:errors path="city" cssClass="error"/>
                 </label>
             </div>
             <div class="form-group">
-                <label for="address">Address:
+                <label for="address">Adres:
                     <form:input path="address" name="address" class="form-control" id="address"/>
                     <form:errors path="address" cssClass="error"/>
                 </label>
             </div>
             <div class="form-group">
-                <label for="phoneNumber">Phone number:
+                <label for="phoneNumber">Numer telefonu:
                     <form:input path="phoneNumber" name="phoneNumber" class="form-control" id="phoneNumber"/>
                     <form:errors path="phoneNumber" cssClass="error"/>
                 </label>
@@ -103,7 +103,7 @@
                 <form:errors path="sex" cssClass="error"/>
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Wyślij</button>
         </form:form>
     </center>
 </div>

@@ -7,10 +7,7 @@ import lombok.Setter;
 import org.hibernate.validator.constraints.pl.NIP;
 
 import javax.persistence.*;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
@@ -26,8 +23,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
-    List<MachineServiceRequest> machineServiceRequestList;
+    @OneToMany( fetch = FetchType.EAGER, mappedBy = "user")
+    List<Machine> machineList;
 
     @Column(nullable = false, unique = true, length = 60)
     private String username;
@@ -61,6 +58,8 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
+
+
     @Column(name = "created_on")
     private LocalDateTime createdOn;
 
@@ -73,7 +72,7 @@ public class User {
 
     @NotNull
     private String companyName;
-    
+
     @Digits(integer = 9, fraction = 0)
     private String phoneNumber;
 
@@ -94,16 +93,34 @@ public class User {
     }
 
 
-    @Override
-    public String toString() {
-        return username;
-    }
-
     public String getPasswordConfirm() {
         return passwordConfirm;
     }
 
     public void setPasswordConfirm(String passwordConfirm) {
         this.passwordConfirm = passwordConfirm;
+    }
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", machineList=" + machineList +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", enabled=" + enabled +
+                ", passwordConfirm='" + passwordConfirm + '\'' +
+                ", email='" + email + '\'' +
+                ", sex='" + sex + '\'' +
+                ", roles=" + roles +
+                ", createdOn=" + createdOn +
+                ", updatedOn=" + updatedOn +
+                ", nip='" + nip + '\'' +
+                ", companyName='" + companyName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                '}';
     }
 }

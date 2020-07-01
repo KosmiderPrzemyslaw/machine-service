@@ -1,4 +1,4 @@
-package bootmaven;
+package bootmaven.configuration;
 
 import bootmaven.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;

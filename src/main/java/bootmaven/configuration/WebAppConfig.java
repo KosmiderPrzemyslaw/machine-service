@@ -1,4 +1,4 @@
-package bootmaven;
+package bootmaven.configuration;
 
 import bootmaven.converter.UserConverter;
 import org.springframework.context.annotation.Bean;

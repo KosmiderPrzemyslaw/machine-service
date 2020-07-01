@@ -1,21 +1,18 @@
 package bootmaven.controllers;
 
-import bootmaven.classes.CurrentUser;
 import bootmaven.model.User;
-import bootmaven.service.UserService;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
+@SessionAttributes({"user"})
 @Controller
 public class LoginController {
-    private final UserService userService;
-
-    public LoginController(UserService userService) {
-        this.userService = userService;
-    }
 
 
     @GetMapping("/logout")
@@ -25,27 +22,28 @@ public class LoginController {
 
 
     @GetMapping("/login")
-    public String form(Model model, String error, String logout)
-    {
-        if(error != null){
-            model.addAttribute("error", "Your username and password is invalid");
+    public String form(Model model, String error, String logout) {
+        if (error != null) {
+            model.addAttribute("error", "Niepoprawna nazwa uzytkownika lub hasło");
         }
-        if(logout != null){
-            model.addAttribute("message", "You have been logged out succesfully");
+        if (logout != null) {
+            model.addAttribute("message", "Logowanie zakończone sukcesem!");
         }
+
+        model.addAttribute("user", new User());
         return "admin/login";
     }
 
 
     @GetMapping("/checkUser")
     @ResponseBody
-    public String admin(@AuthenticationPrincipal CurrentUser customUser) {
-        User entityUser = customUser.getUser();
-        return "Hello " + entityUser.getUsername();
+    public Object getLoggedUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        return authentication.getPrincipal();
     }
 
     @GetMapping("/check")
-    public String check(){
+    public String check() {
         return "check";
     }
 

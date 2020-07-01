@@ -4,8 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -15,7 +17,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class MachineServiceRequest {
+public class Machine {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,6 +31,8 @@ public class MachineServiceRequest {
     private LocalDateTime updatedOn;
 
     @NotNull
+    @NotBlank
+    @Length(min = 30, max = 250)
     String description;
 
     @NotNull
@@ -36,8 +40,15 @@ public class MachineServiceRequest {
 
     BigDecimal amountToPay;
 
+    @NotNull
+    String serialNumber;
+
+    String additionalEquipment;
+
     @ManyToOne
     User user;
+
+
 
     @PrePersist
     public void prePersist() {

@@ -13,7 +13,7 @@
     <title>Body</title>
     <jsp:include page="header.jsp"/>
 </head>
-<body background="src/main/webapp/WEB-INF/img/images.jpeg">
+<body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -25,25 +25,25 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/">Strona główna<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/machineService">Service request</a>
+                <a class="nav-link" href="/machineService">Wyślij zgłoszenie serwisowe</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="/message">Napisz wiadomość</a>
             </li>
 
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link2</a>
+                <a class="nav-link" href="/myServices">Moje serwisy</a>
             </li>
 
         </ul>
 
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
+            <input class="form-control mr-sm-2" type="search" placeholder="Search in Google" aria-label="Search">
+            <button class="btn btn-dark my-2 my-sm-0"  type="submit">Search</button>
         </form>
         <sec:authorize access="isAuthenticated() == false">
             <form class="form-inline my-0 my-lg-0" method="get" action="/login">
