@@ -53,8 +53,8 @@
                 </div>
             </spring:bind>
             <div class="form-group">
-                <label for="email">Email:
-                    <form:input path="email" name="email" class="form-control" id="email"/>
+                <label for="emails">Email:
+                    <form:input path="email" name="emails" class="form-control" id="emails"/>
                     <form:errors path="email" cssClass="error"/>
                 </label>
             </div>

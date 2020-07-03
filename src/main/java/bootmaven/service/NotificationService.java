@@ -15,12 +15,12 @@ public class NotificationService {
         this.javaMailSender = javaMailSender;
     }
 
-    public void sendNotification(User user) throws MailException {
+    public void sendNotification(User user, String mailAddress, String subject, String text) throws MailException {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
-        mailMessage.setTo(user.getEmail());
-        mailMessage.setFrom("kosmiderprzemyslaw91@gmail.com");
-        mailMessage.setSubject("New mail");
-        mailMessage.setText("powiadomienie o mailu");
+        mailMessage.setTo(mailAddress);
+        mailMessage.setFrom(user.getEmail());
+        mailMessage.setSubject(subject);
+        mailMessage.setText(text);
 
         javaMailSender.send(mailMessage);
     }

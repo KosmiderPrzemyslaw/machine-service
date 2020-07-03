@@ -7,8 +7,11 @@ import bootmaven.repositories.UserRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.management.Query;
+import javax.persistence.EntityManager;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 
 @Service
 
@@ -18,10 +21,11 @@ public class UserServiceImpl implements UserService {
     private final RoleRepository roleRepository;
     private final BCryptPasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository, BCryptPasswordEncoder passwordEncoder) {
+    public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository, BCryptPasswordEncoder passwordEncoder, EntityManager entityManager) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.passwordEncoder = passwordEncoder;
+
     }
 
     @Override
@@ -39,5 +43,4 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
     }
 
-
-}
+ }

@@ -81,3 +81,8 @@ h1.error404 {
     color: red;
 
 }
+
+h1.email{
+    text-align: center;
+    color: honeydew;
+}

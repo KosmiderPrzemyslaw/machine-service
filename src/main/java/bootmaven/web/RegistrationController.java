@@ -11,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 @Controller
@@ -33,7 +32,7 @@ public class RegistrationController {
 
 
     @PostMapping("/registration")
-    public String userReg(@ModelAttribute("userForm") @Valid @RequestBody User user, BindingResult result, HttpServletResponse response) {
+    public String userReg(@ModelAttribute("userForm") @Valid @RequestBody User user, BindingResult result) {
         userValidator.validate(user, result);
         if (result.hasErrors()) {
             return "admin/registration";

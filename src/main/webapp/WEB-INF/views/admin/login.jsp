@@ -30,7 +30,7 @@
             <span>${message}</span>
             <label for="username">Nazwa użytkownika
                 <input type="text" name="username" class="form-control" id="username"/>
-                    <%--            <form:errors path="email" cssClass="error"/>--%>
+                    <%--            <form:errors path="emails" cssClass="error"/>--%>
             </label>
         </div>
         <div class="form-group">

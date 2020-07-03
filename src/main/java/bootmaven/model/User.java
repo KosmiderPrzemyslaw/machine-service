@@ -8,6 +8,7 @@ import org.hibernate.validator.constraints.pl.NIP;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
+import javax.validation.constraints.Email;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
@@ -23,8 +24,9 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany( fetch = FetchType.EAGER, mappedBy = "user")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
     List<Machine> machineList;
+
 
     @Column(nullable = false, unique = true, length = 60)
     private String username;
@@ -44,6 +46,13 @@ public class User {
     @Transient
     private String passwordConfirm;
 
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
+//    List<Mail> userEmailsList;
+
+    public String getEmail() {
+        return email;
+    }
+
     @NotEmpty
     @Column(name = "email", unique = true)
     @Email
@@ -57,7 +66,6 @@ public class User {
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
-
 
 
     @Column(name = "created_on")
