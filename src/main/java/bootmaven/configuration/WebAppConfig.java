@@ -3,7 +3,9 @@ package bootmaven.configuration;
 import bootmaven.converter.UserConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.format.FormatterRegistry;
+import org.springframework.ui.freemarker.FreeMarkerConfigurationFactoryBean;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -21,7 +23,7 @@ public class WebAppConfig implements WebMvcConfigurer {
     }
 
     @Bean
-    public UserConverter getUserConverter(){
+    public UserConverter getUserConverter() {
         return new UserConverter();
     }
 

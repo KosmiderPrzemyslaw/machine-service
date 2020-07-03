@@ -31,7 +31,7 @@
                 <a class="nav-link" href="/machineService">Wyślij zgłoszenie serwisowe</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/message">Napisz wiadomość</a>
+                <a class="nav-link" href="/send-email">Napisz wiadomość</a>
             </li>
 
             </li>

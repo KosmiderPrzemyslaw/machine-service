@@ -1,4 +1,4 @@
-package bootmaven.controllers;
+package bootmaven.web;
 
 import bootmaven.model.User;
 import bootmaven.service.SecurityService;

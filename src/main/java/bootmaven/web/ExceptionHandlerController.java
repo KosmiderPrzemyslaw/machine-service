@@ -1,4 +1,4 @@
-package bootmaven.controllers;
+package bootmaven.web;
 
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -9,7 +9,7 @@ import java.util.Date;
 
 @ControllerAdvice
 public class ExceptionHandlerController {
-    public static final String DEFAULT_ERROR_VIEW = "error";
+    public static final String DEFAULT_ERROR_VIEW = "404";
 
     @ExceptionHandler(value = {Exception.class, RuntimeException.class})
     public ModelAndView defaultErrorHandler(HttpServletRequest request, Exception e) {

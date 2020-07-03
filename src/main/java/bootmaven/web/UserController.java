@@ -1,4 +1,4 @@
-package bootmaven.controllers;
+package bootmaven.web;
 
 import bootmaven.classes.CurrentUser;
 import bootmaven.model.User;
