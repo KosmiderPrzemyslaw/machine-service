@@ -49,12 +49,6 @@ public class MachineServiceController {
         return "dashboard";
     }
 
-    private User userAuthentication() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-        String username = userDetails.getUsername();
-        return userService.findByUserName(username);
-    }
 
     @Transactional
     @GetMapping("/update/{id}")
@@ -72,7 +66,6 @@ public class MachineServiceController {
         } catch (NullPointerException e) {
             return "404";
         }
-
     }
 
     @Transactional
@@ -108,4 +101,12 @@ public class MachineServiceController {
                 .findAny()
                 .orElse(null);
     }
+
+    private User userAuthentication() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        String username = userDetails.getUsername();
+        return userService.findByUserName(username);
+    }
+
 }

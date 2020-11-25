@@ -30,12 +30,12 @@
     <c:forEach items="${machineList}" var="machine">
         <li class="list-group-item list-group-item-primary" id="number">Numer zgłoszenia serwisowego: ${machine.id}
             <a href="/update/${machine.id}" class="btn btn-warning" style="float: right"  role="button" id="button1" aria-pressed="true">Aktualizuj</a>
-              <a href="/deleteService/${machine.id}" class="btn btn-danger" style="float: right" role="button" id="button2"
-               aria-pressed="true">Usuń</a>
+              <a href="/deleteService/${machine.id}" class="btn btn-danger" style="float: right" role="button" id="button2" aria-pressed="true">Usuń</a>
         </li>
         <li class="list-group-item">Nazwa maszyny: ${machine.machineName}</li>
         <li class="list-group-item">Opis problemu: ${machine.description}</li>
         <li class="list-group-item">Numer seryjny: ${machine.serialNumber}</li>
+        <li class="list-group-item">Data zgłoszenia serwisowego: ${machine.createdOn}</li>
         <li class="list-group-item">Ostatnie zmiany: ${machine.updatedOn}</li>
     </c:forEach>
 </ul>

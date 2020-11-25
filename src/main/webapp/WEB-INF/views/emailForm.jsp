@@ -43,9 +43,8 @@
                     </label>
                 </div>
             </spring:bind>
-
-            <form:select path="receiver" items="${usersMailAddresses}"/>
-<%--            <form:hidden path="user" name="user" id="user">${pageContext.request.userPrincipal.name}</form:hidden>--%>
+            <label class="form-group">Wybierz do kogo wysłać wiadomość:</label><br>
+            <form:select path="receiver" items="${usersMailAddresses}"/><br><br>
             <button type="submit" class="btn btn-primary">Wyślij</button>
         </form:form>
     </center>

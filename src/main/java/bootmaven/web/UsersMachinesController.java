@@ -2,6 +2,7 @@ package bootmaven.web;
 
 import bootmaven.model.Machine;
 import bootmaven.model.User;
+import bootmaven.repositories.MachineServiceRepository;
 import bootmaven.service.MachineService;
 import bootmaven.service.UserService;
 import org.springframework.security.core.Authentication;
@@ -20,7 +21,8 @@ public class UsersMachinesController {
     private final UserService userService;
     private final MachineService machineService;
 
-    public UsersMachinesController(UserService userService, MachineService machineService) {
+
+    public UsersMachinesController(UserService userService, MachineService machineService, MachineServiceRepository machineServiceRepository) {
         this.userService = userService;
         this.machineService = machineService;
     }
@@ -44,17 +46,17 @@ public class UsersMachinesController {
 
     @Transactional
     @GetMapping("/deleteService/{id}")
-    public String delete(@PathVariable long id, Model model) {
+    public String delete(@PathVariable long id) {
         User user = userAuthentication();
-
-        Machine machineFromDB = checkMachineInDb(id, user);
-        if (machineFromDB == null) {
-            return "403";
-        } else {
-            machineService.delete(machineFromDB.getId());
+        Machine machineInDb = checkMachineInDb(id, user);
+        if (machineInDb == null) {
+            return "redirect:/myServices";
         }
+
+        machineService.delete(machineInDb.getId());
         return "machineList";
     }
+
 
     private Machine checkMachineInDb(@PathVariable long id, User user) {
         List<Machine> userMachineList = user.getMachineList();

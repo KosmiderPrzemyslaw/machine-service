@@ -57,5 +57,4 @@ public class RegistrationController {
         model.asMap().forEach((k, v) -> logger.debug(k + ": " + v));
     }
 
-
 }
